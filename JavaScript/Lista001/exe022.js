@@ -3,3 +3,13 @@ A função recebe como parâmetro um inteiro que representa o mês (1 - janeiro,
 que foi paga e o valor da anuidade. A anuidade deve ser paga no mês de janeiro. Por mês, é 
 cobrado 5% de juros (sob o regime de juros compostos).
 O retorno deve ser o valor a ser pago para o respectivo mês escolhido. */
+
+
+const calculaAnuidade = (mes, valor) => {
+    let total = mes > 0 && mes < 13 ? (valor * (1.05 ** (mes - 1)) ).toFixed(2) : 'Mês inválido'
+    return total
+}
+
+console.log(calculaAnuidade(3, 1000))
+console.log(calculaAnuidade(13, 1000))
+console.log(calculaAnuidade(0, 1000))
