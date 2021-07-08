@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul".............')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa') // Altera
+        console.log('getAttribute', lista.getAttribute('destino'))
+        lista.setAttribute('status', 'aberto') // Adiciona --- Linha 13 agora tem os atributos id="compras" destino="empresa" data-urgencia="5" status = "aberto"
+        lista.removeAttribute('destino') // Remove
+        console.log(lista.dataset)
+        console.log(lista.dataset.urgencia)
+        lista.dataset.urgencia = 4
+        console.log(lista.dataset)
+        console.log(lista.getAttribute('data-urgencia'))
+        
+        // cuidado
+        const label = document.querySelector('label')
+        console.log(label.for) // Não consegue acessar assim
+        console.log(label.htmlFor) // Agora consegue
+        console.log(label.getAttribute('for')) // Também consegue
+
+        // Atributos do próprio HTML vc consegue acessar com a notação .(ponto)
+        // Atributos personalizados vc consegue acessar a partir da função getAttribute, mas tem como acessar através da notação .(ponto) o modo está na próxima aula acessandoAtributos3.html
+
+    </script>
+</body>
+
+</html>
