@@ -1,0 +1,22 @@
+db.estados.find().pretty()  copiar id de São Paulo, para colar no campo abaixo.
+
+Associado com o Estado
+
+db.empresas.insert({
+    nome: "Bradesco",
+    estadoId: ObjectId(id São Paulo)
+})
+
+db.empresas.find().pretty()
+
+
+db.estados.find().pretty() copiar id de Sorocaba, para colar no campo abaixo.
+
+Associado com a Cidade
+
+db.empresas.insert({
+    nome: "Vale",
+    cidadeId: ObjectId(id Sorocaba)
+})
+
+db.empresas.find().pretty()
